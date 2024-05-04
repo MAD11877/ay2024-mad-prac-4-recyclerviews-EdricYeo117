@@ -21,6 +21,7 @@ import java.util.Random;
 public class ListActivity extends AppCompatActivity {
     private ArrayList<User> list;
     private ImageView imageView;
+    private UserAdapter userAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,7 @@ public class ListActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler_main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-
-        UserAdapter userAdapter = new UserAdapter(list);
+        userAdapter = new UserAdapter(list);
         recyclerView.setAdapter(userAdapter);
 
     }
