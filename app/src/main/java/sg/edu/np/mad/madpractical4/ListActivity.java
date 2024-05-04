@@ -35,7 +35,7 @@ public class ListActivity extends AppCompatActivity {
         });
 
         //Creating users
-        list = generateRandomUsers();
+        generateRandomUsers();
         // Applying recycler view
         RecyclerView recyclerView = findViewById(R.id.recycler_main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -46,8 +46,8 @@ public class ListActivity extends AppCompatActivity {
     }
 
     // Method to generate random users
-    private ArrayList<User> generateRandomUsers() {
-        ArrayList<User> userList = new ArrayList<>();
+    private void generateRandomUsers() {
+        list = new ArrayList<>();
         for (int i = 1; i <= 20; i++) {
             String name = generateRandomName();
             String description = generateRandomDescription();
@@ -55,10 +55,10 @@ public class ListActivity extends AppCompatActivity {
 
             // Create user object and add to the list
             User user = new User(name, description, i, followed);
-            userList.add(user);
+            list.add(user);
         }
-        return userList;
     }
+
 
     // Generate a random name with appended random integers
     private String generateRandomName() {
