@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 tvName.setText(currentUser.getName());
                 tvDescription.setText(currentUser.getDescription());
                 // Set initial follow state
-                followed = currentUser.getFollowed();
+                followed = currentUser.isFollowed();
                 updateButtonMessageText();
             }
         }

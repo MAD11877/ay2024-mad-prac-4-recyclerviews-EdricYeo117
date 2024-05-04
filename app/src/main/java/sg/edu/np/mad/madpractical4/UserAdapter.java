@@ -17,7 +17,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
-        if (viewType >= 0 && viewType < userList.size() && userList.get(viewType).getName().endsWith("7")) {
+        if (userList.get(viewType).getName().endsWith("7")) {
             // Inflate layout for names ending with 7
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_activity_list_image, parent, false);
         } else {
@@ -26,7 +26,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
         }
         return new UserViewHolder(view);
     }
-
 
 
     @Override

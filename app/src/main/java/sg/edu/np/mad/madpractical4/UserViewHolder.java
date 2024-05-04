@@ -59,6 +59,8 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
         textView_description.setText(user.getDescription());
         // Assuming you also have an image for each user
         imageView_user.setImageResource(R.drawable.ic_launcher_foreground);
-        imageView_large_user.setImageResource(R.drawable.ic_launcher_foreground);
+        if (imageView_large_user != null) {
+            imageView_large_user.setImageResource(R.drawable.ic_launcher_foreground);
+        }
     }
 }

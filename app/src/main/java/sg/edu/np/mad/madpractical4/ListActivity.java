@@ -1,9 +1,13 @@
 package sg.edu.np.mad.madpractical4;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -12,7 +16,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class ListActivity extends AppCompatActivity {
@@ -31,7 +34,7 @@ public class ListActivity extends AppCompatActivity {
         });
 
         //Creating users
-        list = new ArrayList<User>();
+        list = new ArrayList<>();
         generateRandomUsers();
         // Applying recycler view
         RecyclerView recyclerView = findViewById(R.id.recycler_main);
