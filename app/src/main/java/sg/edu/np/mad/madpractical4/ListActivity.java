@@ -36,7 +36,6 @@ public class ListActivity extends AppCompatActivity {
 
         //Creating users
         list = generateRandomUsers();
-        generateRandomUsers();
         // Applying recycler view
         RecyclerView recyclerView = findViewById(R.id.recycler_main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
