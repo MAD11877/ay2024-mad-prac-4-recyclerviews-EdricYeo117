@@ -40,16 +40,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public boolean isFollowed() {
+    public boolean getFollowed() {
         return followed;
     }
 
     public void setFollowed(boolean followed) {
         this.followed = followed;
     }
-    public void toggleFollow() {
-        followed = !followed;
-    }
-
 }
 
