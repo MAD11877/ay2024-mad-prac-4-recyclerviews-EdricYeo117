@@ -48,37 +48,20 @@ public class MainActivity extends AppCompatActivity {
         setupFollowButton();
     }
 
-    private void setupUserInformation() {
-        Intent intent = getIntent();
-        if (intent != null) {
-            User user = (User) intent.getSerializableExtra("user");
-            if (user != null) {
-                String userName = user.getName();
-                String userDescription = user.getDescription();
-                tvName.setText(userName);
-                tvDescription.setText(userDescription);
-            }
-        }
-    }
     private void setupFollowButton() {
         buttonFollow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Toggle follow state
-                followed = !followed;
+                currentUser.setFollowed(!currentUser.getFollowed());
                 updateButtonMessageText();
-                String toastMessage = followed ? getString(R.string.button_follow_text) : getString(R.string.button_unfollow_text);
+                String toastMessage = currentUser.getFollowed() ? getString(R.string.button_follow_text) : getString(R.string.button_unfollow_text);
                 Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
-
-                // Update isFollowed in User object
-                if (currentUser != null) {
-                    currentUser.setFollowed(followed);
-                }
             }
         });
     }
 
     private void updateButtonMessageText() {
-        buttonFollow.setText(followed ? R.string.button_unfollow_text : R.string.button_follow_text);
+        buttonFollow.setText(currentUser.getFollowed() ? R.string.button_unfollow_text : R.string.button_follow_text);
     }
 }
