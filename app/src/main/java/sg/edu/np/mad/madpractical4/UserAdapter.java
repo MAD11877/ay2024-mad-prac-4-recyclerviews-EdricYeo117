@@ -5,10 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
-    private List<User> userList;
-    public UserAdapter(List<User> userList) {
+    private ArrayList<User> userList;
+    public UserAdapter(ArrayList<User> userList) {
         this.userList = userList;
     }
     @NonNull
