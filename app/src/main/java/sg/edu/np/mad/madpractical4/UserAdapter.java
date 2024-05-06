@@ -10,9 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     private ArrayList<User> userList;
-    public UserAdapter(ArrayList<User> userList) {
+    private ListActivity activity;
+
+    public UserAdapter(ArrayList<User> userList, ListActivity activity) {
         this.userList = userList;
+        this.activity = activity;
     }
+
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

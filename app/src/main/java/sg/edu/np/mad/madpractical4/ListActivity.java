@@ -40,7 +40,7 @@ public class ListActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler_main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        userAdapter = new UserAdapter(list);
+        userAdapter = new UserAdapter(list, this);
         recyclerView.setAdapter(userAdapter);
 
     }
